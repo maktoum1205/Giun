@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>吉音Giun — 吉他指板工具</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+    </head>
+    <body>
+<div id="proto">
+            <h1 v-cloak>{{ strings.title }}</h1>
+            <h2 v-cloak>{{ strings.subtitle }}</h2>
+            <language-selector :languages="Object.keys(allStrings)" v-model="language"></language-selector>
+            <div v-cloak class="reset" @click="reset(language)">{{ strings.reset }}</div>
+            <metronome-popup></metronome-popup>
+            <play-recorder @reset-notes="resetNotes"></play-recorder>
+
+            <div class="columns">
+                <div class="col-1" v-cloak>
+                    <tonnetz-view :notes="notes"></tonnetz-view>
+                </div>
+
+                <div class="col-2" v-cloak>
+                    <clock-octave v-bind:notes="notes" v-bind:height="400" v-bind:width="400" v-bind:intervals="1"></clock-octave>
+                    <clock-octave v-bind:notes="notes" v-bind:height="400" v-bind:width="400" v-bind:intervals="7"></clock-octave>
+                </div>
+            </div>
+            <div class="fretboard-section"><guitar-fretboard :notes="notes" :arpeggio="arpeggio" @arpeggio-change="arpeggio = $event"></guitar-fretboard></div>
+            <chord-reference :notes="notes" :arpeggio="arpeggio"></chord-reference>
+        </div>
+
+        <!-- All libraries loaded locally for reliability -->
+        <script src="lib/Vue/vue.min.js"></script>
+        <script src="lib/JZZ/jzz.js"></script>
+        <script src="lib/JZZ/JZZ.synth.Tiny.min.js"></script>
+        <script src="lib/JZZ/jzz-midi-smf.js"></script>
+        <script src="lib/GSAP/TweenLite.js"></script>
+
+        <!-- Application modules -->
+        <script src="js/utils.js"></script>
+        <script src="js/l12n.js"></script>
+        <script src="js/mixins/clickMixins.js"></script>
+        <script src="js/mixins/trajectory.js"></script>
+        <script src="js/decorators/dragZoom.js"></script>
+        <script src="js/midiBus.js"></script>
+        <script src="js/components/tonnetzLike.js"></script>
+        <script src="js/components/tonnetzView.js"></script>
+        <script src="js/components/clockOctave.js"></script>
+        <script src="js/components/guitarFretboard.js"></script>
+        <script src="js/chordDb.js"></script>
+        <script src="js/components/chordReference.js"></script>
+        <script src="js/components/metronome.js"></script>
+        <script src="js/components/intervalTable.js"></script>
+        <script src="js/components/songLoader.js"></script>
+        <script src="js/components/playRecorder.js"></script>
+        <script src="js/index.js"></script>
+
+    </body>
+</html>

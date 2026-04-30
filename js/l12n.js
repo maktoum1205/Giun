@@ -1,0 +1,95 @@
+const strings = {
+  en: {
+    title: '吉音Giun',
+    subtitle: '吉他指板工具',
+    dual: 'Dual / 对偶',
+    reset: 'Reset / 重置',
+    load: 'Load Midi File / 加载MIDI',
+    start: 'Record / 录音',
+    stopRecord: 'Stop Recording / 停止录音',
+    play: 'Play / 播放',
+    stopPlay: 'Stop Playing / 停止播放',
+    pause: 'Pause / 暂停',
+    rotate: 'Rotate 180° / 旋转180°',
+    translate: 'Translate / 平移',
+    export: 'Export / 导出',
+    connected: 'This Tonnetz is non-connected and doesn\'t contain every note.',
+    notes: ['A', 'A♯', 'B', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯']
+  },
+  de: {
+    title: 'Das Tonnetz',
+    subtitle: 'Ein Klang – viele Darstellungen',
+    dual: 'Dual',
+    reset: 'Zurücksetzen',
+    load: 'Midi Datei Laden',
+    start: 'Aufnehmen',
+    stopRecord: 'Aufnahme Stoppen',
+    play: 'Abspielen',
+    stopPlay: 'Abspiel Stoppen',
+    pause: 'Pause',
+    rotate: '180° Rotieren',
+    translate: 'Verschieben',
+    export: 'Exportieren',
+    connected: 'Dieses Tonnetz ist nicht verbunden, und enthält nicht alle Noten.',
+    notes: ['A', 'B', 'H', 'C', 'C♯', 'D', 'D♯', 'E', 'F', 'F♯', 'G', 'G♯']
+  },
+  fr: {
+    title: 'Le Tonnetz',
+    subtitle: 'Note unique — Représentations nombreuses',
+    dual: 'Dual',
+    reset: 'Réinitialiser',
+    load: 'Charger des données Midi',
+    start: 'Enregistrer',
+    stopRecord: 'Arrêter l\'enregistrement',
+    play: 'Lecture',
+    stopPlay: 'Arrêt',
+    pause: 'Pause',
+    rotate: 'Rotation à 180°',
+    translate: 'Translation',
+    export: 'Exporter',
+    connected: 'Ce Tonnetz n\'est pas connexe et ne contient pas toutes les notes.',
+    notes: ['La', 'La♯', 'Si', 'Do', 'Do♯', 'Ré', 'Ré♯', 'Mi', 'Fa', 'Fa♯', 'Sol', 'Sol♯']
+  },
+  hi: {
+    title: 'सरगम',
+    subtitle: 'एक स्वर, रूप अनेक',
+    dual: 'Dual',
+    reset: 'Reset',
+    load: 'मिडी फाइल खोलें',
+    start: 'रिकॉर्डिंग शुरू करें',
+    stopRecord: 'रिकॉर्डिंग ख़त्म करें',
+    play: 'Play',
+    stopPlay: 'Stop Playing',
+    pause: 'Pause',
+    rotate: '180° पलटें',
+    translate: 'अनुवाद करें',
+    export: 'Export',
+    connected: 'इस जोड़ में सभी स्वर नहीं है.',
+    notes: ['ध', 'निb', 'नि', 'सा', 'रेb', 'रे', 'गb', 'ग', 'म', 'पb', 'प', 'धb']
+  }
+}
+
+const search = location.search.match(/hl=(\w*)/);
+const language = strings.hasOwnProperty(search) ? search[1] : 'en';
+
+let languageSelector = {
+    props:{
+        value:{
+            type:String
+        },
+        languages:{
+            type:Array,
+            required:true
+        }
+    },
+    template:`
+        <div class="languageSwitcher">
+            <div v-cloak v-for="lang of languages"
+            @click="$emit('input',lang)">
+                {{ lang }}
+            </div>
+        </div>
+    `
+}
+
+var Tonnetz_l12n = true;
