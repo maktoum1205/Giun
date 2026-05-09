@@ -88,6 +88,7 @@ var guitarFretboard = {
             quickScales: [
                 { id: 'major', label: 'Major / 大调' },
                 { id: 'natural_minor', label: 'Minor / 小调' },
+                { id: 'dorian', label: 'Dorian / 多利亚' },
                 { id: 'major_pentatonic', label: 'Pentatonic / 五声' },
                 { id: 'blues', label: 'Blues / 布鲁斯' },
                 { id: 'harmonic_minor', label: 'Har.Minor / 和声小调' },
