@@ -18,7 +18,10 @@ var scalePatterns = {
     phrygian_dominant: { name: 'Phry.Dom',     intervals: [0,1,4,5,7,8,10] },
     lydian_dominant:   { name: 'Lyd.Dom',      intervals: [0,2,4,6,7,9,10] },
     bebop_dominant:    { name: 'Bebop Dom',    intervals: [0,2,4,5,7,9,10,11] },
-    whole_tone:        { name: 'Whole Tone',   intervals: [0,2,4,6,8,10] },
+    whole_tone:             { name: 'Whole Tone',   intervals: [0,2,4,6,8,10] },
+    diminished:             { name: 'Diminished',   intervals: [0,1,3,4,6,7,9,10] },
+    japanese_pentatonic:    { name: 'J.Pent',       intervals: [0,2,3,7,9] },
+    double_harmonic_major:  { name: 'D.Harm.Maj',   intervals: [0,1,4,5,7,8,11] },
 };
 
 var scaleList = [
@@ -37,6 +40,9 @@ var scaleList = [
     { id: 'bebop_dominant', name: 'Bebop Dom/比波普属音阶 (Jazz)' },
     { id: 'whole_tone', name: 'Whole Tone/全音阶' },
     { id: 'locrian', name: 'Locrian/洛克利亚' },
+    { id: 'diminished', name: 'Diminished/减音阶 (Half-Whole)' },
+    { id: 'japanese_pentatonic', name: 'J.Pent/日本阳五声 (Sakura)' },
+    { id: 'double_harmonic_major', name: 'D.Harm.Maj/阿拉伯拜占庭' },
 ];
 
 var guitarFretboard = {
