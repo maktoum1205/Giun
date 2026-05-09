@@ -91,6 +91,9 @@ var guitarFretboard = {
                 { id: 'major_pentatonic', label: 'Pentatonic / 五声' },
                 { id: 'blues', label: 'Blues / 布鲁斯' },
                 { id: 'harmonic_minor', label: 'Har.Minor / 和声小调' },
+                { id: 'diminished', label: 'Diminished / 减音阶' },
+                { id: 'japanese_pentatonic', label: 'J.Pent / 日本五声' },
+                { id: 'double_harmonic_major', label: 'Arabic / 阿拉伯' },
             ],
             soundSource: 'piano',
             soundOptions: [
