@@ -1,20 +1,6 @@
 /* Author: Corentin Guichaoua, Philipp Legner — Adapted with Guitar Fretboard */
 
-@font-face {
-  font-family: 'Quicksand';
-  font-style: normal;
-  font-weight: normal;
-  src: url('fonts/quicksand-book.woff') format('woff');
-}
-
-@font-face {
-  font-family: 'Quicksand';
-  font-style: normal;
-  font-weight: 700;
-  src: url('fonts/quicksand-bold.woff') format('woff');
-}
-
-html, body { margin: 0; padding: 0; font-family: 'Quicksand'; color: #323248; }
+html, body { margin: 0; padding: 0; font-family: system-ui, -apple-system, sans-serif; color: #323248; }
 [v-cloak] { display: none; }
 
 h1 { text-align: center; text-transform: uppercase; margin: 12px 0 4px; font-size: 40px; }
